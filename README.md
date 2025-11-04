@@ -77,11 +77,11 @@ $ npm run test
 
 ## Endpoints
 ```bash
-# obtener todos los productos
+# obtener todos los productos GET
 curl --location 'localhost:7001/products'
 
-# Crear un producto
-curl --location 'localhost:7001/v1/products' \
+# Crear un producto POST
+curl --location 'localhost:7001/products' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: test-key' \
 --data '{
@@ -91,15 +91,15 @@ curl --location 'localhost:7001/v1/products' \
     "stock": 10
 }'
 
-# Actualizar el stock
-curl --location --request PATCH 'localhost:7001/v1/products/1/stock' \
+# Actualizar el stock PATCH
+curl --location --request PATCH 'localhost:7001/products/1/stock' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: test-key' \
 --data '{
     "stock": 10
 }'
 
-# Simulacipon de un reindex
+# Simulacipon de un reindex POST
 curl --location 'localhost:7001/products/4/reindex' \
 --header 'Content-Type: application/json' \
 --data '{
