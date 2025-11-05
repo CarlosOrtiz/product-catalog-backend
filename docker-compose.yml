@@ -6,7 +6,7 @@ services:
     env_file:
       - .env.develop
     ports:
-      - "7001:7001"
+      - "7001:7001" 
     depends_on:
       - db
 
